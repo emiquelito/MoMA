@@ -3,6 +3,7 @@ deployments:
     filename: ./docker-compose.yml
     vm_size: 1GB
     pipelines:
+      dockerimage: ubuntu:bionic-20220427
       - api:
         scripts:
             - echo "API Tests are running..."
