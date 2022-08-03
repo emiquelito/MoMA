@@ -2,3 +2,24 @@ deployments:
   MoMa-Paintings:
     filename: ./docker-compose.yml
     vm_size: 1GB
+  MyApp:
+    dockerimage: nginx
+    squash_pr_comments: false
+    pipelines:
+      - Core Tests:
+          group_id: core
+          scripts:
+            - echo true
+      - API Entities:
+          group_id: api
+          scripts:
+            - sleep 11; ls -la  
+      - API Products:
+          group_id: api
+          scripts:
+            - sleep 7; ls -la              
+      - ShoppingCart Tests:
+          group_id: app
+          depends_on_group: api
+          scripts:
+            - ls -la
