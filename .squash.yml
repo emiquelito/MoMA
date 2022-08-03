@@ -3,14 +3,12 @@ deployments:
     filename: ./docker-compose.yml
     vm_size: 1GB
     pipelines:
-      - API Tests:
+      - api:
         scripts:
             - echo "API Tests are running..."
-           
-      - Cart Tests:
+      - cart:
         scripts:
             - echo "Cart tests are running..."
-            
-      - Frontend Tests:
+      - frontend:
         scripts:
             - echo "Frontend tests are running..."
