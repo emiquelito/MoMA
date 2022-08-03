@@ -2,3 +2,15 @@ deployments:
   MoMa-Paintings:
     filename: ./docker-compose.yml
     vm_size: 1GB
+    pipelines:
+      - API Tests:
+        scripts:
+            - echo "API Tests are running..."
+           
+      - Cart Tests:
+        scripts:
+            - echo "Cart tests are running..."
+            
+      - Frontend Tests:
+        scripts:
+            - echo "Frontend tests are running..."
